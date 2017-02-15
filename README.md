@@ -17,3 +17,16 @@ URLS="http://foo.bar/\nhttp://foo.bar/baz" # \n delimited list of URLs to hit
 The script will loop forever, but will only run siege `$COUNT` times. The rest
 of the time, it will simply sleep for a minute, and then print a sleeping
 message.
+
+## Launching your siege
+The easiest way is with `docker run`:
+```bash
+docker run -e URLS="list of URLS" -e COOKIE="cookie string" -e COUNT=1 \
+    -e OPTIONS="-v -c 10 -i -d 1" mrndrsn/siege-engine:latest
+```
+
+However, that's only going to give you one instance of siege, you may as well
+just run it in your terminal.
+
+To really amp things up, use something like Kubernetes or Amazon ECS to run the
+task on multiple nodes in your cluster, and test from many endpoints at once!

@@ -5,3 +5,6 @@ WORKDIR /root
 COPY siegerc /root/.siegerc
 COPY urls.txt /root/
 COPY startup.sh /root/
+
+ENTRYPOINT []
+CMD /root/startup.sh

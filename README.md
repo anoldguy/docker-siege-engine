@@ -1,10 +1,11 @@
 # Siege Engine
 
 This docker image is a bit of glue around siege.  In an effort to avoid having
-any credentials or URLs hard-coded, it reads them out of the environment.  Yes,
-this means that whatever container coordination/management software you are
-using will see your session cookie, so only use this on staging environments
-where you control access.
+any credentials or URLs hard-coded, it reads them out of the environment.  
+
+> **I CANNOT STRESS THIS ENOUGH:** *Yes*, this means that whatever container 
+> coordination/management software you are using will see your session cookie,
+> so only use this on staging environments where you control access.
 
 ## Important Variables
 ```bash
